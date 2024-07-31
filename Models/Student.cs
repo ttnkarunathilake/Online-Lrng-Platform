@@ -20,4 +20,5 @@ public partial class Student
     public string Nic { get; set; } = null!;
 
     public DateTime RegisterDate { get; set; }
+    public User user { get; set; }
 }
