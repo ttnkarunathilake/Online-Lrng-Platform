@@ -10,8 +10,4 @@ public partial class StudentEnroll
     public string StudentId { get; set; } = null!;
 
     public DateOnly EnrollDate { get; set; }
-
-    public virtual Course Course { get; set; } = null!;
-
-    public virtual Student Student { get; set; } = null!;
 }

@@ -19,7 +19,5 @@ public partial class Student
 
     public string Nic { get; set; } = null!;
 
-    public DateOnly RegisterDate { get; set; }
-
-    public virtual ICollection<StudentEnroll> StudentEnrolls { get; set; } = new List<StudentEnroll>();
+    public DateTime RegisterDate { get; set; }
 }

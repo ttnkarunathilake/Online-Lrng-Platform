@@ -18,6 +18,4 @@ public partial class Course
     public int MaxCount { get; set; }
 
     public string Status { get; set; } = null!;
-
-    public virtual ICollection<StudentEnroll> StudentEnrolls { get; set; } = new List<StudentEnroll>();
 }

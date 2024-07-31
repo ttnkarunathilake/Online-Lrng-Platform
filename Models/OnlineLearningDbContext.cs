@@ -114,16 +114,6 @@ public partial class OnlineLearningDbContext : DbContext
                 .HasMaxLength(7)
                 .IsUnicode(false)
                 .HasColumnName("StudentID");
-
-            entity.HasOne(d => d.Course).WithMany(p => p.StudentEnrolls)
-                .HasForeignKey(d => d.CourseId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_StudentEnroll_Course");
-
-            entity.HasOne(d => d.Student).WithMany(p => p.StudentEnrolls)
-                .HasForeignKey(d => d.StudentId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_StudentEnroll_Student");
         });
 
         modelBuilder.Entity<User>(entity =>

@@ -35,38 +35,38 @@ namespace OnlineLearningAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(Student product)
+        public async Task<IActionResult> Post(Student student)
         {
-            _context.Add(product);
+            _context.Add(student);
             await _context.SaveChangesAsync();
             return Ok();
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(Student productData)
+        public async Task<IActionResult> Put(Student studentData)
         {
-            //if (productData == null || productData.Id == 0)
+            //if (studentData == null || studentData.Id == 0)
             //    return BadRequest();
 
-            var product = await _context.Students.FindAsync(productData.StudentId);
-            if (product == null)
+            var student = await _context.Students.FindAsync(studentData.StudentId);
+            if (student == null)
                 return NotFound();
-            product.FirstName = productData.FirstName;
-            product.LastName = productData.LastName;
-            product.Nic = productData.Nic;
+            student.FirstName = studentData.FirstName;
+            student.LastName = studentData.LastName;
+            student.Nic = studentData.Nic;
             await _context.SaveChangesAsync();
             return Ok();
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
-            if (id < 1)
-                return BadRequest();
-            var product = await _context.Students.FindAsync(id);
-            if (product == null)
+            //if (id < 1)
+            //    return BadRequest();
+            var student = await _context.Students.FindAsync(id);
+            if (student == null)
                 return NotFound();
-            _context.Students.Remove(product);
+            _context.Students.Remove(student);
             await _context.SaveChangesAsync();
             return Ok();
 

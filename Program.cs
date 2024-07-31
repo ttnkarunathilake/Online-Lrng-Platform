@@ -4,7 +4,7 @@ using OnlineLearningAPI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("OnlineLearningDbContext");
+var connectionString = builder.Configuration.GetConnectionString("OnlineLearningDB");
 builder.Services.AddDbContextPool<OnlineLearningDbContext>(option =>
 option.UseSqlServer(connectionString)
 );
